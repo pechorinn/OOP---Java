@@ -18,4 +18,28 @@ public class Plot extends Property {
 				+ "\n-----------------------------------";
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + (regulation ? 1231 : 1237);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Plot other = (Plot) obj;
+		if (regulation != other.regulation)
+			return false;
+		return true;
+	}
+	
+	
+
 }

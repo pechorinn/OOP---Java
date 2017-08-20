@@ -27,5 +27,37 @@ public class House extends PropertyType {
 				+ "\nOwner: " + owner.getName()
 				+ "\n-----------------------------------";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((houseType == null) ? 0 : houseType.hashCode());
+		result = prime * result + parkingSpaces;
+		long temp;
+		temp = Double.doubleToLongBits(yardSpace);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		House other = (House) obj;
+		if (houseType != other.houseType)
+			return false;
+		if (parkingSpaces != other.parkingSpaces)
+			return false;
+		if (Double.doubleToLongBits(yardSpace) != Double.doubleToLongBits(other.yardSpace))
+			return false;
+		return true;
+	}
+	
+	
 		
 }

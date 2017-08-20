@@ -24,4 +24,27 @@ public class Appartment extends PropertyType {
 				+ "\n-----------------------------------";
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((apartmentType == null) ? 0 : apartmentType.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Appartment other = (Appartment) obj;
+		if (apartmentType != other.apartmentType)
+			return false;
+		return true;
+	}
+
+		
 }

@@ -13,7 +13,7 @@ public class Client extends Thread{
 	@Override
 	public void run() {
 		while(true){
-			sh.getProduct(productName, 3);
+		  sh.getProduct(productName, 3);
 			System.out.println("Client bought 3 kg" + productName);
 			try {
 				Thread.sleep(1500);
